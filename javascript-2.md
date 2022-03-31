@@ -1,66 +1,65 @@
 # Operadores
 
 ## Aritiméticos: retornam o resultado de uma operação
-+ somar
-- subtrair
-* multiplicar
-/ dividir
-% resto da divisão
+-  + somar
+-  - subtrair
+-  * multiplicar
+-  / dividir
+-  % resto da divisão
 
 ## Comparadores matemáticos: teste lógico, retorno booleano (true / false):
-< menor que
-> maior que
-<= menor ou igual
->= maior ou igual
+-  < menor que
+-  > maior que
+-  <= menor ou igual
+-  >= maior ou igual
 
 ## Comparadores lógicos: teste lógico, retorno booleano (true / false):
-== igualdade entre sentenças (valor)
-!= diferença entre sentenças (valor)
-=== igualdade entre sentenças (valor e tipo)
-!== diferença entre sentenças (valor e tipo)
+-  == igualdade entre sentenças (valor)
+-  != diferença entre sentenças (valor)
+-  === igualdade entre sentenças (valor e tipo)
+-  !== diferença entre sentenças (valor e tipo)
 
 ## Operadores de lógica e junção lógica
-! NÃO (NOT)
-&& E (AND)
-|| OU (OR)
+-  ! NÃO (NOT)
+-  && E (AND)
+-  || OU (OR)
 
 O sinal de exclamação (!) é o operador NOT (não), utilizado para negar a sentença que vem na sequència.
 
 #### Exemplos:
-a != b    // o valor de a é diferente de b
-x !=== y  // o valor e o tipo de x são diferentes de y
-!a == b   // o valor de a não é igual ao valor de b
+-  a != b    // o valor de a é diferente de b
+-  x !=== y  // o valor e o tipo de x são diferentes de y
+-  !a == b   // o valor de a não é igual ao valor de b
 
 #### As condições lógicas são convertidas em números binários:
-true é equivalente a 1
-false é equivalente a 0
+-  true é equivalente a 1
+-  false é equivalente a 0
 
 #### Operador lógico de atribuição
-
-Tem a capacidade de atribuir valor a uma variável a partir de uma condição lógica, economiza IFs
+-  Tem a capacidade de atribuir valor a uma variável a partir de uma condição lógica, economiza IFs
 
 Exemplo:
 
-var meuCarro = cor == "preto" ? "preto" : "branco";
+-  var meuCarro = cor == "preto" ? "preto" : "branco";
 
 
 ## If
-if (...) {
+-   if (...) {
 
 }
 
 ## Else
-else {
+-  else {
 
 }
 
 ## Else if
-else if (...){
+-  else if (...){
 
 }
 
 ## Switch
-switch (cor) {
+-  switch (cor) {
     case 'branco' :
         meuCarro = 'branco';
         break;
@@ -73,3 +72,42 @@ switch (cor) {
     default:
         console.log('não temos a cor desejada');
 }
+
+
+
+## Laços de repetição
+
+for ([expressaoInicial]; [condicao]; [incremento])
+
+
+while ( [condicao] ){
+    [execucao]
+}
+
+do {
+    [execucao]
+} while (condicao)
+
+## Funções 
+- Servem para evitar a repetição de código
+- Realizar chamadas dinâmicas de algoritmos
+
+function calcularMedia(notas) {
+    let soma = 0;
+    for ( c = 0; c < notas.lenght; c++) {
+        soma += notas[c];
+    }
+
+    media = soma / notas.lenght;
+    return media;
+
+}
+
+let media; 
+function aprovacao( notas ) {
+    let media = calcularMedia( notas );
+    let condicao = media >= 8 ? "aprovado" : "reprovado";
+
+    return 'Média: ' + media + ' - Resultado: ' + condicao;
+}
+
