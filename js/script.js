@@ -58,7 +58,7 @@ function validaCampo(elemento){
         
         event.preventDefault();
     
-        if(this.value == ''){
+        if(this.value == '') {
             document.querySelector('.mensagem').innerHTML = 'Verifique o preenchimento dos campos em vermelho';
             this.classList.add('erro');
             this.parentNode.classList.add('erro');
@@ -80,7 +80,7 @@ function validaCampoNumerico(elemento){
         let numero = this.value.match(/^[\d]5-[\d]3/) ? this.value.replace(/-/, "") : this.value;
     
         if(numero != "" && numero.match(/[0-9]*/) && numero >= 0 && numero <= 10) {
-            document.querySelector('.mensagem').innerHTML = '';
+            document.querySelector('.mensagem').innerHTML = "";
             this.classList.remove('erro');
             this.parentNode.classList.remove('erro');
         } else {
@@ -97,7 +97,7 @@ function validaEmail(elemento) {
 
         event.preventDefault();
 
-        const emailValido = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.[a-z]?$/i;
+        const emailValido = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?/i;
 
         if(this.value.match(emailValido)) {
             document.querySelector('.mensagem').innerHTML = "";
@@ -117,7 +117,7 @@ function validaEstado(elemento) {
 
         event.preventDefault();
 
-        const validaUf = /^[a-z]?/i;
+        const validaUf = /^(\[a-z])?/i;
 
         if(this.value.match(validaUf)) {
             document.querySelector('.mensagem').innerHTML = "";
